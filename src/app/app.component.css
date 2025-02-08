@@ -1,0 +1,139 @@
+/* Contenedor principal del chat */
+.chat-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Encabezado del chat */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px;
+  background: #0078ff;
+  color: white;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Área de los mensajes */
+.chat-window {
+  height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo de los mensajes */
+.message {
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+  position: relative;
+  font-size: 16px;
+}
+
+/* Mensajes del usuario (derecha) */
+.user-message {
+  background: #0078ff;
+  color: white;
+  align-self: flex-end;
+  text-align: left;
+  border-radius: 15px 15px 0 15px;
+  padding-right: 30px;
+}
+
+/* Mensajes del bot (izquierda) */
+.bot-message {
+  background: #e0e0e0;
+  color: black;
+  align-self: flex-start;
+  text-align: left;
+  border-radius: 15px 15px 15px 0;
+  padding-right: 30px;
+}
+
+/* Estilo del timestamp */
+.timestamp {
+  font-size: 12px;
+  color: #666;
+  position: absolute;
+  bottom: -18px;
+  right: 10px;
+  white-space: nowrap;
+}
+
+/* Contenedor de la barra de entrada */
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  gap: 8px;
+}
+
+/* Estilo del input */
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+  background: #f9f9f9;
+}
+
+/* Estilo de los botones */
+.input-area button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #0078ff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.input-area button:hover {
+  transform: scale(1.2);
+}
+
+/* Estilo de los iconos */
+.input-area button i {
+  font-size: 22px;
+  color: #0078ff;
+}
+
+/* Botón de subir archivos */
+.upload-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 22px;
+  color: #0078ff;
+}
+
+.upload-button:hover {
+  color: #005bb5;
+}
+
+/* Scroll bonito */
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background: #0078ff;
+  border-radius: 3px;
+}
