@@ -1,13 +1,15 @@
 <div class="chat-container">
-  <div class="chat-header">
-    🤖 <strong>ChatBot AI</strong>
-  </div>
+  <div class="chat-header">🤖 <strong>ChatBot Food</strong></div>
 
   <div class="chat-window">
-    <div *ngFor="let message of messages" 
-         [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}" 
-         class="message">
-      
+    <div
+      *ngFor="let message of messages"
+      [ngClass]="{
+        'user-message': message.sender === 'user',
+        'bot-message': message.sender === 'bot'
+      }"
+      class="message"
+    >
       <!-- Si es texto, se muestra directamente -->
       <ng-container *ngIf="message.type === 'text'; else mediaTemplate">
         {{ message.text }}
@@ -15,8 +17,18 @@
 
       <!-- Si es imagen o audio, se usa esta plantilla -->
       <ng-template #mediaTemplate>
-        <img *ngIf="message.type === 'image'" [src]="message.text" alt="Imagen enviada" class="chat-image" />
-        <audio *ngIf="message.type === 'audio'" [src]="message.text" controls class="chat-audio"></audio>
+        <img
+          *ngIf="message.type === 'image'"
+          [src]="message.text"
+          alt="Imagen enviada"
+          class="chat-image"
+        />
+        <audio
+          *ngIf="message.type === 'audio'"
+          [src]="message.text"
+          controls
+          class="chat-audio"
+        ></audio>
       </ng-template>
 
       <!-- Fecha y hora -->
@@ -26,26 +38,41 @@
 
   <!-- Barra de entrada de mensaje -->
   <div class="input-area">
-    <input [(ngModel)]="userInput" placeholder="Escribe un mensaje..." (keyup.enter)="sendMessage()" />
+    <input
+      [(ngModel)]="userInput"
+      placeholder="Escribe un mensaje..."
+      (keyup.enter)="sendMessage()"
+    />
 
     <button (click)="sendMessage()" aria-label="Enviar mensaje">
       <i class="fas fa-paper-plane"></i>
     </button>
 
-    <button *ngIf="!recording" (click)="startRecording()" aria-label="Iniciar grabación">
+    <button
+      *ngIf="!recording"
+      (click)="startRecording()"
+      aria-label="Iniciar grabación"
+    >
       <i class="fas fa-microphone"></i>
     </button>
 
-    <button *ngIf="recording" (click)="stopRecording()" aria-label="Detener grabación">
+    <button
+      *ngIf="recording"
+      (click)="stopRecording()"
+      aria-label="Detener grabación"
+    >
       <i class="fas fa-stop"></i>
     </button>
 
     <label for="file-upload" class="upload-button" aria-label="Subir imagen">
-      <input id="file-upload" type="file" (change)="onFileUpload($event)" accept="image/*" hidden />
+      <input
+        id="file-upload"
+        type="file"
+        (change)="onFileUpload($event)"
+        accept="image/*"
+        hidden
+      />
       <i class="fas fa-upload"></i>
     </label>
-    
   </div>
 </div>
-
-

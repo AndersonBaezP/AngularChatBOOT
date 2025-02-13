@@ -1,11 +1,12 @@
 /* Contenedor principal del chat */
 .chat-container {
-  width: 100%;
-  max-width: 500px;
+  width: 90%;
+  max-width: 900px;
+  height: 90vh;
   margin: 20px auto;
   background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -16,43 +17,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
-  padding: 15px;
-  background: #0078ff;
+  padding: 20px;
+  background: #12ce7a;
   color: white;
-  border-radius: 15px 15px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
 /* Área de los mensajes */
 .chat-window {
-  height: 400px;
+  flex: 1;
   overflow-y: auto;
-  padding: 15px;
-  background: #f0f0f0;
+  padding: 20px;
+  background: #f8f9fa;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 /* Estilo de los mensajes */
 .message {
-  padding: 12px 15px;
-  border-radius: 10px;
+  padding: 15px 20px;
+  border-radius: 15px;
   margin-bottom: 12px;
-  max-width: 75%;
+  max-width: 80%;
   word-wrap: break-word;
   position: relative;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Mensajes del usuario (derecha) */
 .user-message {
-  background: #0078ff;
+  background: #12ce7a;
   color: white;
   align-self: flex-end;
   text-align: left;
-  border-radius: 15px 15px 0 15px;
-  padding-right: 30px;
+  border-radius: 20px 20px 0 20px;
+  padding-right: 40px;
+  font-size: 18px;
 }
 
 /* Mensajes del bot (izquierda) */
@@ -61,17 +64,18 @@
   color: black;
   align-self: flex-start;
   text-align: left;
-  border-radius: 15px 15px 15px 0;
-  padding-right: 30px;
+  border-radius: 20px 20px 20px 0;
+  padding-right: 40px;
+  font-size: 18px;
 }
 
 /* Estilo del timestamp */
 .timestamp {
-  font-size: 12px;
-  color: #666;
+  font-size: 14px;
+  color: #555;
   position: absolute;
-  bottom: -18px;
-  right: 10px;
+  bottom: -20px;
+  right: 15px;
   white-space: nowrap;
 }
 
@@ -79,20 +83,26 @@
 .input-area {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   background: #fff;
-  border-top: 1px solid #ddd;
-  gap: 8px;
+  border-top: 2px solid #ddd;
+  gap: 12px;
 }
 
 /* Estilo del input */
 .input-area input {
   flex: 1;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  font-size: 16px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  font-size: 18px;
   background: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.input-area input:focus {
+  border-color: #12ce7a;
+  outline: none;
 }
 
 /* Estilo de los botones */
@@ -100,19 +110,19 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 22px;
-  color: #0078ff;
+  font-size: 26px;
+  color: #12ce7a;
   transition: transform 0.2s ease-in-out;
 }
 
 .input-area button:hover {
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
 /* Estilo de los iconos */
 .input-area button i {
-  font-size: 22px;
-  color: #0078ff;
+  font-size: 26px;
+  color: #12ce7a;
 }
 
 /* Botón de subir archivos */
@@ -120,20 +130,26 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 22px;
-  color: #0078ff;
+  font-size: 26px;
+  color: #12ce7a;
 }
 
 .upload-button:hover {
-  color: #005bb5;
+  color: #12ce7a;
 }
 
-/* Scroll bonito */
+/* Scroll más moderno */
 .chat-window::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .chat-window::-webkit-scrollbar-thumb {
-  background: #0078ff;
-  border-radius: 3px;
+  background: #12ce7a;
+  border-radius: 4px;
 }
+
+.chat-window::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 4px;
+}
+
