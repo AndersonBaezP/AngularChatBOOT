@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'BootChat';
   userInput: string = '';
   messages: { text: string, sender: 'user' | 'bot', type: 'text' | 'image' | 'audio', timestamp: string }[] = [];
   recording: boolean = false;
